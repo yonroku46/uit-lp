@@ -1,0 +1,180 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.counselor {
+  @include section-padding;
+  background: $color-bg-secondary;
+  position: relative;
+  overflow: hidden;
+
+  &__inner {
+    @include container;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2xl;
+
+    @include responsive(lg) {
+      flex-direction: row;
+      align-items: center;
+      gap: $spacing-3xl;
+    }
+  }
+
+  &__visual {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
+
+    @include responsive(lg) {
+      align-items: flex-start;
+    }
+  }
+
+  &__imageWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 180px;
+    aspect-ratio: 3 / 4;
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+
+    @include responsive(md) {
+      max-width: 300px;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+  }
+
+  &__basicInfo {
+    text-align: center;
+    @include responsive(lg) {
+      text-align: left;
+    }
+  }
+
+  &__name {
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-black;
+    color: $color-text-primary;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    @include responsive(lg) {
+      flex-direction: row;
+      align-items: baseline;
+      gap: $spacing-sm;
+    }
+  }
+
+  &__ruby {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    color: $color-text-secondary;
+    letter-spacing: 0.1em;
+  }
+
+  &__birth {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    margin-top: 4px;
+  }
+
+  &__details {
+    flex: 1.5;
+  }
+
+  &__header {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__label {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    letter-spacing: 0.2em;
+    color: $color-accent;
+    text-transform: uppercase;
+  }
+
+  &__heading {
+    font-size: clamp($font-size-2xl, 3.5vw, $font-size-4xl);
+    font-weight: $font-weight-black;
+    color: $color-text-primary;
+    line-height: $line-height-tight;
+  }
+
+  &__headingAccent {
+    @include gradient-text;
+  }
+
+  &__bio {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    margin-bottom: $spacing-xl;
+
+    p {
+      font-size: $font-size-base;
+      color: $color-text-secondary;
+      line-height: $line-height-relaxed;
+    }
+  }
+
+  &__qualifications {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: $border-radius-md;
+    padding: $spacing-lg;
+  }
+
+  &__qualTitle {
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: $spacing-md;
+  }
+
+  &__qualIcon {
+    color: $color-accent-light;
+  }
+
+  &__qualList {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    list-style: none;
+    margin-bottom: $spacing-md;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: $font-size-sm;
+      color: $color-text-primary;
+      font-weight: $font-weight-medium;
+
+      svg {
+        color: $color-accent-light;
+      }
+    }
+  }
+
+  &__affiliation {
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: $spacing-sm;
+  }
+}
