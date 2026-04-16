@@ -199,6 +199,12 @@
 
   &__cta {
     margin-top: $spacing-md;
+    display: flex;
+    justify-content: center;
+
+    @include responsive(lg) {
+      justify-content: flex-start;
+    }
   }
 
   &__ctaBtn {

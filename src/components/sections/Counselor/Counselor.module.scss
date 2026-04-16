@@ -35,10 +35,19 @@
     }
   }
 
-  &__imageWrapper {
+  &__imageContainer {
     position: relative;
     width: 100%;
     max-width: 180px;
+
+    @include responsive(md) {
+      max-width: 300px;
+    }
+  }
+
+  &__imageWrapper {
+    position: relative;
+    width: 100%;
     aspect-ratio: 3 / 4;
     border-radius: $border-radius-xl;
     overflow: hidden;
@@ -52,6 +61,46 @@
 
   &__image {
     object-fit: cover;
+  }
+  
+  &__noteIcon {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 52px;
+    height: 52px;
+    background: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 6px $color-bg-secondary;
+    transition: all $transition-base;
+    z-index: 10;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+
+    img {
+      width: 28px;
+      height: 28px;
+    }
+
+    &:hover {
+      transform: scale(1.1) rotate(-5deg);
+      background: #fdfdfd;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    @include responsive(md) {
+      width: 60px;
+      height: 60px;
+      bottom: -20px;
+      right: -20px;
+
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
   }
 
   &__basicInfo {
@@ -95,6 +144,11 @@
 
   &__header {
     margin-bottom: $spacing-lg;
+    text-align: center;
+
+    @include responsive(lg) {
+      text-align: left;
+    }
   }
 
   &__label {

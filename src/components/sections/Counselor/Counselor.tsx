@@ -9,13 +9,24 @@ export default function Counselor() {
         <div className={styles.counselor__container}>
           {/* 画像・基本情報 */}
           <div className={styles.counselor__visual}>
-            <div className={styles.counselor__imageWrapper}>
-              <Image
-                src="/images/kunitake.avif"
-                alt="ライフキャリアカウンセラー 国武 建次"
-                fill
-                className={styles.counselor__image}
-              />
+            <div className={styles.counselor__imageContainer}>
+              <div className={styles.counselor__imageWrapper}>
+                <Image
+                  src="/images/kunitake.avif"
+                  alt="ライフキャリアカウンセラー 国武 建次"
+                  fill
+                  className={styles.counselor__image}
+                />
+              </div>
+              <a
+                href="https://note.com/kuni_cc0702"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.counselor__noteIcon}
+                title="noteを見る"
+              >
+                <Image src="/icon/note-simple.svg" alt="note" width={24} height={24} />
+              </a>
             </div>
             <div className={styles.counselor__basicInfo}>
               <h3 className={styles.counselor__name}>

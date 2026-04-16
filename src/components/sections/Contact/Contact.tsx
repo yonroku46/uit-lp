@@ -7,6 +7,7 @@ import styles from './Contact.module.scss';
 interface FormData {
   name: string;
   email: string;
+  phone: string;
   jobType: string;
   experience: string;
   message: string;
@@ -39,6 +40,7 @@ export default function Contact() {
   const [form, setForm] = useState<FormData>({
     name: '',
     email: '',
+    phone: '',
     jobType: '',
     experience: '',
     message: '',
@@ -51,6 +53,7 @@ export default function Contact() {
     const errs: Partial<FormData> = {};
     if (!form.name.trim()) errs.name = 'お名前を入力してください';
     if (!form.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) errs.email = '有効なメールアドレスを入力してください';
+    if (!form.phone.trim()) errs.phone = '電話番号を入力してください';
     if (!form.jobType) errs.jobType = '現在の職種を選択してください';
     if (!form.experience) errs.experience = '経験年数を選択してください';
     if (!form.message.trim()) errs.message = 'お問い合わせ内容を入力してください';
@@ -81,13 +84,16 @@ export default function Contact() {
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          sendType: "lp"
+        }),
       });
 
       if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
 
       setStatus('success');
-      setForm({ name: '', email: '', jobType: '', experience: '', message: '' });
+      setForm({ name: '', email: '', phone: '', jobType: '', experience: '', message: '' });
     } catch (err) {
       console.error(err);
       setStatus('error');
@@ -161,21 +167,38 @@ export default function Contact() {
             </div>
 
             <div className={styles.contact__field}>
-              <label className={styles.contact__label} htmlFor="email">
-                メールアドレス <span className={styles.contact__required}>必須</span>
+              <label className={styles.contact__label} htmlFor="phone">
+                電話番号 <span className={styles.contact__required}>必須</span>
               </label>
               <input
-                type="email"
-                id="email"
-                name="email"
-                className={`${styles.contact__input} ${errors.email ? styles['contact__input--error'] : ''}`}
-                value={form.email}
+                type="tel"
+                id="phone"
+                name="phone"
+                className={`${styles.contact__input} ${errors.phone ? styles['contact__input--error'] : ''}`}
+                value={form.phone}
                 onChange={handleChange}
-                placeholder="taro@example.com"
-                autoComplete="email"
+                placeholder="090-0000-0000"
+                autoComplete="tel"
               />
-              {errors.email && <p className={styles.contact__error}>{errors.email}</p>}
+              {errors.phone && <p className={styles.contact__error}>{errors.phone}</p>}
             </div>
+          </div>
+
+          <div className={styles.contact__field}>
+            <label className={styles.contact__label} htmlFor="email">
+              メールアドレス <span className={styles.contact__required}>必須</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className={`${styles.contact__input} ${errors.email ? styles['contact__input--error'] : ''}`}
+              value={form.email}
+              onChange={handleChange}
+              placeholder="taro@example.com"
+              autoComplete="email"
+            />
+            {errors.email && <p className={styles.contact__error}>{errors.email}</p>}
           </div>
 
           <div className={styles.contact__row}>
