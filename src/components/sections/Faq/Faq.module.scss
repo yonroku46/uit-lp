@@ -76,6 +76,32 @@
     }
   }
 
+  &__questionContent {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    flex: 1;
+  }
+
+  &__number {
+    color: $color-accent;
+    font-weight: $font-weight-black;
+    font-size: $font-size-sm;
+    letter-spacing: 0.05em;
+    font-family: 'Outfit', sans-serif; // If available, or system sans
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 14px;
+      background: rgba($color-accent, 0.3);
+    }
+  }
+
   &__questionText {
     font-size: $font-size-base;
     font-weight: $font-weight-semibold;

@@ -31,9 +31,14 @@ export default function Counselor() {
             <div className={styles.counselor__basicInfo}>
               <h3 className={styles.counselor__name}>
                 国武 建次
-                <span className={styles.counselor__ruby}>Kunitake Kenji</span>
               </h3>
               <p className={styles.counselor__birth}>1968年2月3日生 / 福岡県久留米市在住</p>
+              <p className={styles.counselor__affiliation}>
+                所属：
+                <a href="https://www.sn-kikaku.co.jp/" target="_blank" rel="noopener noreferrer">
+                  株式会社新日本企画
+                </a>
+              </p>
             </div>
           </div>
 
@@ -63,7 +68,7 @@ export default function Counselor() {
             <div className={styles.counselor__qualifications}>
               <h4 className={styles.counselor__qualTitle}>
                 <Award size={20} className={styles.counselor__qualIcon} />
-                保有資格・所属
+                保有資格 / 認定
               </h4>
               <ul className={styles.counselor__qualList}>
                 <li>
@@ -75,7 +80,7 @@ export default function Counselor() {
                   <span>日本アドラー心理学振興会認定 カウンセラー</span>
                 </li>
               </ul>
-              <p className={styles.counselor__affiliation}>所属：株式会社新日本企画</p>
+
             </div>
           </div>
         </div>

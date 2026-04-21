@@ -5,8 +5,9 @@ import Hero from '@/components/sections/Hero/Hero';
 import Problem from '@/components/sections/Problem/Problem';
 import Philosophy from '@/components/sections/Philosophy/Philosophy';
 import ValueProposition from '@/components/sections/ValueProposition/ValueProposition';
+import Service from '@/components/sections/Service/Service';
 import Process from '@/components/sections/Process/Process';
-import CounselingFlow from '@/components/sections/CounselingFlow/CounselingFlow';
+import CareerApproach from '@/components/sections/CareerApproach/CareerApproach';
 import Counselor from '@/components/sections/Counselor/Counselor';
 import Faq from '@/components/sections/Faq/Faq';
 import Contact from '@/components/sections/Contact/Contact';
@@ -95,10 +96,11 @@ export default function HomePage() {
       <main id="main-content">
         <Hero />
         <Problem />
+        <CareerApproach />
         <Philosophy />
         <ValueProposition />
+        <Service />
         <Process />
-        <CounselingFlow />
         <Counselor />
         <Faq />
         <Contact />

@@ -1,36 +1,77 @@
 import {
-  ClipboardCheck,
   MessageSquare,
-  Target,
-  Rocket,
+  Phone,
+  Users,
+  UserPlus,
+  Building,
+  FileSearch,
+  Coffee,
+  FileCheck,
+  Briefcase,
+  Flag,
 } from 'lucide-react';
-import Image from 'next/image';
 import styles from './Process.module.scss';
 
 const steps = [
   {
     number: '01',
-    Icon: ClipboardCheck,
-    title: '無料相談を申し込む',
-    description: 'フォームまたはメールで申し込み。24時間以内に担当カウンセラーから連絡します。',
+    Icon: MessageSquare,
+    title: 'フォームからお問合せ',
+    description: 'まずは専用フォームより、お気軽にお問い合わせください。',
   },
   {
     number: '02',
-    Icon: MessageSquare,
-    title: 'オンラインカウンセリング',
-    description: 'Zoomで90分の初回相談。現状・希望・不安を丁寧にヒアリングします。完全無料です。',
+    Icon: Phone,
+    title: '弊社よりご連絡',
+    description: '担当者より、カウンセリング日程調整のためご連絡を差し上げます。',
   },
   {
     number: '03',
-    Icon: Target,
-    title: 'キャリア戦略の策定',
-    description: 'ヒアリングをもとに、あなたに合ったキャリアロードマップを一緒に作成します。',
+    Icon: Users,
+    title: 'ライフキャリアカウンセリング',
+    description: '将来の展望や現状の課題を伺います。初回相談は無料で実施しております。',
   },
   {
     number: '04',
-    Icon: Rocket,
-    title: '転職支援 or スキルアップ',
-    description: '転職活動なら企業紹介・書類添削・面接対策を。スキルアップなら学習プランの設計も支援します。',
+    Icon: UserPlus,
+    title: '人材登録',
+    description: '将来福岡への転職を希望する方は、専用フォームより人材登録を行っていただきます。',
+  },
+  {
+    number: '05',
+    Icon: Building,
+    title: '希望に合う求人企業の紹介',
+    description: 'ご希望に合わせて最適な企業をご紹介します。※状況によりご紹介が難しい場合もございます。',
+  },
+  {
+    number: '06',
+    Icon: FileSearch,
+    title: '応募検討',
+    description: '紹介された求人の中から、ご自身が応募したい企業をじっくり検討いただけます。',
+  },
+  {
+    number: '07',
+    Icon: Coffee,
+    title: 'カジュアル面談',
+    description: '選考の前に、企業の雰囲気や仕事内容を直接聞けるカジュアルな面談をセッティングします。',
+  },
+  {
+    number: '08',
+    Icon: FileCheck,
+    title: '正式応募',
+    description: '求人企業に合わせた書類作成のアドバイスや、選考を通過するための面接対策を行います。',
+  },
+  {
+    number: '09',
+    Icon: Briefcase,
+    title: '求人企業での選考',
+    description: '書類選考や面接など、企業ごとの選考プロセスに進みます。',
+  },
+  {
+    number: '10',
+    Icon: Flag,
+    title: '結果',
+    description: '内定・採用条件の確認を行い、納得いただいた上での入社をサポートします。',
   },
 ];
 
@@ -54,24 +95,6 @@ export default function Process() {
         </header>
 
         <div className={styles.process__content}>
-          {/* 左側のビジュアル */}
-          <div className={styles.process__visual}>
-            <div className={styles.process__imageWrapper}>
-              <Image
-                src="/images/process-consultation.png"
-                alt="Online Consulting"
-                fill
-                className={styles.process__image}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className={styles.process__imageOverlay} />
-              <div className={styles.process__imageBadge}>
-                オンラインで完結
-              </div>
-            </div>
-          </div>
-
-          {/* 右側のステップリスト */}
           <div className={styles.process__main}>
             <ol className={styles.process__list}>
               {steps.map(({ number, Icon, title, description }, idx) => (
@@ -87,7 +110,7 @@ export default function Process() {
                   <div className={styles.process__stepInfo}>
                     <span className={styles.process__stepNumText}>STEP {number}</span>
                     <h3 className={styles.process__stepTitle}>{title}</h3>
-                    <p className={styles.process__stepDesc}>{description}</p>
+                    {description && <p className={styles.process__stepDesc}>{description}</p>}
                   </div>
                 </li>
               ))}
