@@ -12,7 +12,7 @@ export default function Counselor() {
             <div className={styles.counselor__imageContainer}>
               <div className={styles.counselor__imageWrapper}>
                 <Image
-                  src="/images/kunitake.avif"
+                  src="/images/kunitake.jpg"
                   alt="ライフキャリアカウンセラー 国武 建次"
                   fill
                   className={styles.counselor__image}
