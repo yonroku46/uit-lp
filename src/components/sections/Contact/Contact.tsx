@@ -17,12 +17,9 @@ type Status = 'idle' | 'sending' | 'success' | 'error';
 
 const jobTypes = [
   'バックエンドエンジニア',
-  'フロントエンドエンジニア',
   'インフラ / SREエンジニア',
   'モバイルエンジニア',
   'フルスタックエンジニア',
-  'データエンジニア / ML',
-  'QAエンジニア',
   'PM / PdM',
   'その他',
 ];

@@ -102,14 +102,6 @@
     filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.5));
   }
 
-  &__serviceTitle {
-    font-size: clamp($font-size-base, 2vw, $font-size-lg);
-    font-weight: $font-weight-bold;
-    color: rgba(255, 255, 255, 0.6);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-
   &__headline {
     font-size: clamp($font-size-2xl, 5vw, $font-size-4xl);
     line-height: 1.4;

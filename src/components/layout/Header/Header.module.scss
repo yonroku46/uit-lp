@@ -37,16 +37,6 @@
     flex-shrink: 0;
   }
 
-  &__logo-mark {
-    @include gradient-text;
-    font-weight: $font-weight-black;
-    font-size: $font-size-xl;
-  }
-
-  &__logo-text {
-    color: $color-text-primary;
-  }
-
   &__nav {
     @include responsive(lg) {
       display: flex;

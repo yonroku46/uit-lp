@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Award, BookOpen, UserCheck } from 'lucide-react';
+import { Award, BookOpen, UserCheck, ExternalLink } from 'lucide-react';
 import styles from './Counselor.module.scss';
 
 export default function Counselor() {
@@ -18,15 +18,6 @@ export default function Counselor() {
                   className={styles.counselor__image}
                 />
               </div>
-              <a
-                href="https://note.com/kuni_cc0702"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.counselor__noteIcon}
-                title="noteを見る"
-              >
-                <Image src="/icon/note-simple.svg" alt="note" width={24} height={24} />
-              </a>
             </div>
             <div className={styles.counselor__basicInfo}>
               <h3 className={styles.counselor__name}>
@@ -39,6 +30,18 @@ export default function Counselor() {
                   株式会社新日本企画
                 </a>
               </p>
+              <a
+                href="https://note.com/kuni_cc0702"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.counselor__noteLink}
+              >
+                <div className={styles.counselor__noteIconApp}>
+                  <Image src="/icon/note-simple.svg" alt="note" width={14} height={14} />
+                </div>
+                <span>Note 書いています。こちらをクリック</span>
+                <ExternalLink size={14} />
+              </a>
             </div>
           </div>
 

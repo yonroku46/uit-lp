@@ -8,7 +8,7 @@ export default function Footer() {
       <div className={styles.footer__inner}>
         <div className={styles.footer__brand}>
           <p className={styles.footer__logo}>
-            <span className={styles['footer__logo-mark']}>UIT</span> Fukuoka
+            UIT-Fukuoka
           </p>
           <p className={styles.footer__tagline}>
             福岡エンジニア専門キャリア相談所

@@ -47,8 +47,7 @@ export default function Header() {
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           aria-label="UIT Fukuoka トップへ戻る"
         >
-          <span className={styles['header__logo-mark']}>UIT</span>
-          <span className={styles['header__logo-text']}>Fukuoka</span>
+          UIT-Fukuoka
         </a>
 
         <nav className={`${styles.header__nav} ${menuOpen ? styles['header__nav--open'] : ''}`} aria-label="メインナビゲーション">

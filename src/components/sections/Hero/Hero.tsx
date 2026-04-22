@@ -14,18 +14,18 @@ export default function Hero() {
       <div className={styles.hero__inner}>
         {/* Top: Identity Label */}
         <div className={styles.hero__category}>
-          <span>福岡に UI ターンしたい / 福岡で働きたい</span>
+          <span>福岡にUIターンしたい / 福岡で働きたい</span>
         </div>
 
         {/* Center: Large Brand & Topic */}
         <div className={styles.hero__main}>
-          <div className={styles.hero__serviceTitle}>IT エンジニア キャリア相談所</div>
           <div className={styles.hero__brandName}>UIT-Fukuoka</div>
         </div>
 
         {/* Catchcopy */}
         <h1 className={styles.hero__headline}>
-          あなたのキャリアを<br/>一度整理しませんか？
+          転職前提ではない<br/>
+          キャリア相談所
         </h1>
 
         {/* Feature List (Compact Horizontal) */}
@@ -40,7 +40,7 @@ export default function Hero() {
 
         {/* Closing & Action */}
         <div className={styles.hero__footer}>
-          <p className={styles.hero__sub}>あなたのキャリアを一緒に考えます。</p>
+          <p className={styles.hero__sub}>あなたのキャリアを一緒に考えます</p>
           <div className={styles.hero__ctas}>
             <a href="#contact" className={styles.hero__ctaPrimary}>
               無料相談に申し込む

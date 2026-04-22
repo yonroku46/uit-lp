@@ -32,11 +32,6 @@
     color: $color-text-primary;
   }
 
-  &__logo-mark {
-    @include gradient-text;
-    font-weight: $font-weight-black;
-  }
-
   &__tagline {
     font-size: $font-size-sm;
     color: $color-text-muted;
