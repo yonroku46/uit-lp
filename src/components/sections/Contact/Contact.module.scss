@@ -35,7 +35,6 @@
   &__label {
     font-size: $font-size-xs;
     font-weight: $font-weight-bold;
-    letter-spacing: 0.2em;
     color: $color-accent;
     text-transform: uppercase;
   }
@@ -155,9 +154,17 @@
     padding-right: $spacing-lg;
     cursor: pointer;
 
+    &.contact__select--placeholder {
+      color: rgba($color-text-muted, 0.5);
+    }
+
     option {
       background: $color-bg-card;
       color: $color-text-primary;
+
+      &:first-child {
+        color: rgba($color-text-muted, 0.5);
+      }
     }
 
     &--error {

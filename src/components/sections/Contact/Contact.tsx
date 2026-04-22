@@ -206,7 +206,7 @@ export default function Contact() {
               <select
                 id="jobType"
                 name="jobType"
-                className={`${styles.contact__select} ${errors.jobType ? styles['contact__select--error'] : ''}`}
+                className={`${styles.contact__select} ${!form.jobType ? styles['contact__select--placeholder'] : ''} ${errors.jobType ? styles['contact__select--error'] : ''}`}
                 value={form.jobType}
                 onChange={handleChange}
               >
@@ -225,7 +225,7 @@ export default function Contact() {
               <select
                 id="experience"
                 name="experience"
-                className={`${styles.contact__select} ${errors.experience ? styles['contact__select--error'] : ''}`}
+                className={`${styles.contact__select} ${!form.experience ? styles['contact__select--placeholder'] : ''} ${errors.experience ? styles['contact__select--error'] : ''}`}
                 value={form.experience}
                 onChange={handleChange}
               >
