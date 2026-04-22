@@ -12,11 +12,11 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   title: {
-    default: 'UIT Fukuoka | 福岡エンジニア専門キャリア相談所',
-    template: '%s | UIT Fukuoka',
+    default: 'UIT-Fukuoka | 福岡エンジニア専門キャリア相談所',
+    template: '%s | UIT-Fukuoka',
   },
   description:
-    '福岡・UIターンエンジニアのキャリア相談なら UIT Fukuoka。転職前提なし、初回90分無料。あなたのキャリアを、もっと自由に。',
+    '福岡・UIターンエンジニアのキャリア相談なら UIT-Fukuoka。転職前提なし、初回90分無料。あなたのキャリアを、もっと自由に。',
   keywords: [
     '福岡', 'エンジニア', '転職', 'UIターン', 'キャリア相談', 'IT転職', '無料相談'
   ],
@@ -24,24 +24,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ja_JP',
     url: process.env.NEXT_PUBLIC_SITE_URL,
-    siteName: 'UIT Fukuoka',
-    title: 'UIT Fukuoka | 福岡エンジニア専門キャリア相談所',
+    siteName: 'UIT-Fukuoka',
+    title: 'UIT-Fukuoka | 福岡エンジニア専門キャリア相談所',
     description:
-      '福岡・UIターンエンジニアのキャリア相談なら UIT Fukuoka。転職前提なし、初回90分無料。',
+      '福岡・UIターンエンジニアのキャリア相談なら UIT-Fukuoka。転職前提なし、初回90分無料。',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'UIT Fukuoka',
+        alt: 'UIT-Fukuoka',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'UIT Fukuoka | 福岡エンジニア専門キャリア相談所',
+    title: 'UIT-Fukuoka | 福岡エンジニア専門キャリア相談所',
     description:
-      '福岡・UIターンエンジニアのキャリア相談なら UIT Fukuoka。転職前提なし、初回90分無料。',
+      '福岡・UIターンエンジニアのキャリア相談なら UIT-Fukuoka。転職前提なし、初回90分無料。',
     images: ['/og-image.png'],
   },
   robots: {

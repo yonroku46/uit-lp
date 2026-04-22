@@ -59,7 +59,7 @@ export default function ValueProposition() {
     <section className={styles.value} id="value" aria-labelledby="value-heading">
       <div className={styles.value__inner}>
         <header className={styles.value__header}>
-          <p className={styles.value__label}>WHY UIT FUKUOKA</p>
+          <p className={styles.value__label}>WHY UIT-FUKUOKA</p>
           <h2 className={styles.value__heading} id="value-heading">
             選ばれる理由が、
             <span className={styles.value__headingAccent}>ここにある。</span>

@@ -13,9 +13,9 @@ import Faq from '@/components/sections/Faq/Faq';
 import Contact from '@/components/sections/Contact/Contact';
 
 export const metadata: Metadata = {
-  title: 'UIT Fukuoka | 福岡エンジニア専門キャリア相談所',
+  title: 'UIT-Fukuoka | 福岡エンジニア専門キャリア相談所',
   description:
-    '福岡・UIターンエンジニアのキャリア相談ならUIT Fukuoka。転職前提なし、初回90分完全無料。あなたのキャリアを、もっと自由に。',
+    '福岡・UIターンエンジニアのキャリア相談ならUIT-Fukuoka。転職前提なし、初回90分完全無料。あなたのキャリアを、もっと自由に。',
 };
 
 // JSON-LD構造化データ
@@ -27,7 +27,7 @@ const jsonLd = {
     {
       '@type': 'Organization',
       '@id': `${siteUrl}/#organization`,
-      name: 'UIT Fukuoka',
+      name: 'UIT-Fukuoka',
       url: siteUrl,
       description: '福岡・UIターンエンジニア専門のキャリア相談サービス',
       address: {

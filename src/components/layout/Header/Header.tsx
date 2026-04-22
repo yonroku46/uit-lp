@@ -45,7 +45,7 @@ export default function Header() {
           href="#"
           className={styles.header__logo}
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-          aria-label="UIT Fukuoka トップへ戻る"
+          aria-label="UIT-Fukuokaトップへ戻る"
         >
           UIT-Fukuoka
         </a>
