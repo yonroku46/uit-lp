@@ -43,7 +43,7 @@ const values = [
     title: '完全オンライン対応',
     image: '/images/value-zoom.png',
     description:
-      '全国どこからでもZoomで相談可能。夜間・週末の相談枠も用意しています。通勤・移動なしで気軽に相談を始められます。',
+      '全国どこからでもZoomで相談可能。夜間・週末の相談枠も用意しています。気軽に相談を始められます。',
   },
   {
     Icon: Handshake,
