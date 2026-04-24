@@ -126,6 +126,15 @@
     font-weight: $font-weight-bold;
     color: $color-text-primary;
     line-height: $line-height-snug;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__cardNote {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-normal;
+    color: $color-text-muted;
+    opacity: 0.8;
   }
 
   &__cardDesc {

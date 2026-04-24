@@ -9,7 +9,15 @@ import {
 import Image from 'next/image';
 import styles from './ValueProposition.module.scss';
 
-const values = [
+interface ValueItem {
+  Icon: any;
+  title: string;
+  note?: string;
+  image: string;
+  description: string;
+}
+
+const values: ValueItem[] = [
   {
     Icon: ArrowRightLeft,
     title: '転職前提ナシ',
@@ -27,9 +35,10 @@ const values = [
   {
     Icon: BadgePercent,
     title: '初回90分、完全無料',
+    note: '条件付きでその後もフォロー有り',
     image: '/images/value-online.png',
     description:
-      '初回のキャリア相談は一切費用不要。転職が成立した場合も、エンジニア側への請求はゼロ。あなたの味方として最後まで伴走します。',
+      '初回のキャリア相談は費用不要です。また今すぐでなくても将来的に転職も視野にある方は人材登録して頂くことで、キャリア相談は無料で続けることが可能です。あなたの味方として最後まで伴走します。'
   },
   {
     Icon: Plane,
@@ -71,7 +80,7 @@ export default function ValueProposition() {
         </header>
 
         <ul className={styles.value__grid} role="list">
-          {values.map(({ Icon, title, image, description }, idx) => (
+          {values.map(({ Icon, title, note, image, description }, idx) => (
             <li key={idx} className={styles.value__card}>
               <div className={styles.value__cardImageWrapper}>
                 <Image
@@ -86,7 +95,10 @@ export default function ValueProposition() {
                 </div>
               </div>
               <div className={styles.value__cardBody}>
-                <h3 className={styles.value__cardTitle}>{title}</h3>
+                <h3 className={styles.value__cardTitle}>
+                  {title}
+                  {note && <span className={styles.value__cardNote}>※{note}</span>}
+                </h3>
                 <p className={styles.value__cardDesc}>{description}</p>
               </div>
             </li>
