@@ -109,7 +109,9 @@ export default function Contact() {
             <p className={styles.contact__thanksDesc}>
               お問い合わせありがとうございます。
               <br />
-              担当者より24時間以内にご連絡差し上げます。
+              内容確認後、担当者よりご連絡差し上げます。
+              <br />
+              (土日祝は対応できない場合がございます)
             </p>
             <button
               className={styles.contact__thanksBack}
@@ -135,7 +137,7 @@ export default function Contact() {
           <p className={styles.contact__desc}>
             まずは話を聞くだけでも大歓迎。
             <br />
-            24時間以内に担当カウンセラーよりご連絡します。
+            担当カウンセラーよりご連絡します。
           </p>
         </header>
 
