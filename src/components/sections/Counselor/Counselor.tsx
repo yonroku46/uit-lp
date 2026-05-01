@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { Award, BookOpen, UserCheck, ExternalLink } from 'lucide-react';
 import * as tracking from '@/lib/tracking';
