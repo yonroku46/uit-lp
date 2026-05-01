@@ -1,4 +1,7 @@
+'use client';
+
 import { CheckCircle } from 'lucide-react';
+import * as tracking from '@/lib/tracking';
 import styles from './Hero.module.scss';
 
 export default function Hero() {
@@ -42,7 +45,14 @@ export default function Hero() {
         <div className={styles.hero__footer}>
           <p className={styles.hero__sub}>あなたのキャリアを一緒に考えます</p>
           <div className={styles.hero__ctas}>
-            <a href="#contact" className={styles.hero__ctaPrimary}>
+            <a 
+              href="#contact" 
+              className={styles.hero__ctaPrimary}
+              onClick={() => {
+                tracking.event({ action: 'click_cta_hero', category: 'engagement', label: 'Primary CTA' });
+                tracking.trackContact();
+              }}
+            >
               無料相談に申し込む
               <span className={styles.hero__ctaArrow} aria-hidden="true">→</span>
             </a>

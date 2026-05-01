@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { CheckCircle } from 'lucide-react';
+import * as tracking from '@/lib/tracking';
 import styles from './Contact.module.scss';
 
 interface FormData {
@@ -89,6 +90,7 @@ export default function Contact() {
       if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
 
       setStatus('success');
+      tracking.trackLead();
       setForm({ name: '', email: '', phone: '', jobType: '', experience: '', message: '' });
     } catch (err) {
       console.error(err);

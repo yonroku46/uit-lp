@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Award, BookOpen, UserCheck, ExternalLink } from 'lucide-react';
+import * as tracking from '@/lib/tracking';
 import styles from './Counselor.module.scss';
 
 export default function Counselor() {
@@ -35,6 +36,7 @@ export default function Counselor() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.counselor__noteLink}
+                onClick={() => tracking.trackViewContent('Counselor Note')}
               >
                 <div className={styles.counselor__noteIconApp}>
                   <Image src="/icon/note-simple.svg" alt="note" width={14} height={14} />

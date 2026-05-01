@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import * as tracking from '@/lib/tracking';
 import styles from './Header.module.scss';
 
 export default function Header() {
@@ -34,8 +35,11 @@ export default function Header() {
 
   const handleNavClick = (href: string) => {
     setMenuOpen(false);
+    if (href === '#contact') {
+      tracking.trackContact();
+    }
     const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    el?.scrollIntoView({ block: 'start' });
   };
 
   return (
@@ -44,7 +48,7 @@ export default function Header() {
         <a
           href="#"
           className={styles.header__logo}
-          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0 }); }}
           aria-label="UIT-Fukuokaトップへ戻る"
         >
           UIT-Fukuoka
