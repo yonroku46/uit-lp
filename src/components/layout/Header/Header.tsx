@@ -27,7 +27,7 @@ export default function Header() {
 
   const navItems = [
     { label: '選ばれる理由', href: '#value' },
-    { label: 'カウンセリング哲学', href: '#philosophy' },
+    { label: 'カウンセリング', href: '#philosophy' },
     { label: 'ご利用の流れ', href: '#process' },
     { label: 'カウンセラー紹介', href: '#counselor' },
     { label: 'よくある質問', href: '#faq' },
