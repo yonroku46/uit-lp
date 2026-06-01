@@ -1,0 +1,156 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.thanksPage {
+  background: $color-bg-primary;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  // Background glow effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &__main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(64px + #{$spacing-xl}) $spacing-sm $spacing-xl;
+    position: relative;
+    z-index: 2;
+
+    @include responsive(md) {
+      padding: calc(64px + #{$spacing-3xl}) $spacing-sm $spacing-3xl;
+    }
+
+    @include responsive(lg) {
+      padding: calc(72px + #{$spacing-3xl}) $spacing-sm $spacing-3xl;
+    }
+  }
+
+  &__card {
+    padding: $spacing-xl $spacing-md;
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
+    position: relative;
+
+    @include responsive(md) {
+      padding: $spacing-3xl $spacing-xl;
+      gap: $spacing-lg;
+    }
+
+    // Subtle light sweep animation on hover
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: $border-radius-lg;
+      box-shadow: inset 0 0 20px rgba(59, 130, 246, 0.05);
+      pointer-events: none;
+    }
+  }
+
+  &__iconWrapper {
+    @include flex-center;
+    width: 80px;
+    height: 80px;
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: $border-radius-full;
+    margin-bottom: $spacing-xs;
+    animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  &__icon {
+    color: $color-success;
+    filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.3));
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title {
+    font-size: clamp($font-size-2xl, 3vw, $font-size-4xl);
+    font-weight: $font-weight-black;
+    color: $color-text-primary;
+    line-height: $line-height-tight;
+    letter-spacing: -0.01em;
+  }
+
+  &__desc {
+    font-size: $font-size-base;
+    color: $color-text-secondary;
+    line-height: $line-height-relaxed;
+    max-width: 480px;
+    margin: 0 auto;
+
+    p {
+      margin-bottom: $spacing-sm;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__button {
+    padding: 14px $spacing-xl;
+    background: $color-accent;
+    color: #fff;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    border-radius: $border-radius-full;
+    transition: background-color $transition-base, transform $transition-base, box-shadow $transition-base;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.25);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+
+    @include responsive(md) {
+      font-size: $font-size-base;
+    }
+
+    &:hover {
+      background: $color-accent-light;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(59, 130, 246, 0.35);
+    }
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

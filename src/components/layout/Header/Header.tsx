@@ -38,6 +38,10 @@ export default function Header() {
     if (href === '#contact') {
       tracking.trackContact();
     }
+    if (window.location.pathname !== '/') {
+      window.location.href = '/' + href;
+      return;
+    }
     const el = document.querySelector(href);
     el?.scrollIntoView({ block: 'start' });
   };
@@ -46,9 +50,14 @@ export default function Header() {
     <header className={`${styles.header} ${(scrolled || menuOpen) ? styles['header--scrolled'] : ''}`}>
       <div className={styles.header__inner}>
         <a
-          href="#"
+          href="/"
           className={styles.header__logo}
-          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0 }); }}
+          onClick={(e) => {
+            if (window.location.pathname === '/') {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
           aria-label="UIT-Fukuokaトップへ戻る"
         >
           UIT-Fukuoka

@@ -17,10 +17,10 @@ export default function Footer() {
 
         <nav className={styles.footer__nav} aria-label="フッターナビゲーション">
           <ul className={styles.footer__navList}>
-            <li><a href="#value">サービス</a></li>
-            <li><a href="#process">ご利用の流れ</a></li>
-            <li><a href="#faq">よくある質問</a></li>
-            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="/#value">サービス</a></li>
+            <li><a href="/#process">ご利用の流れ</a></li>
+            <li><a href="/#faq">よくある質問</a></li>
+            <li><a href="/#contact">お問い合わせ</a></li>
           </ul>
         </nav>
       </div>

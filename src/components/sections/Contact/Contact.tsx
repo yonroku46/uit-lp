@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { CheckCircle } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import * as tracking from '@/lib/tracking';
 import styles from './Contact.module.scss';
 
@@ -35,6 +35,7 @@ const experienceOptions = [
 ];
 
 export default function Contact() {
+  const router = useRouter();
   const [form, setForm] = useState<FormData>({
     name: '',
     email: '',
@@ -93,39 +94,14 @@ export default function Contact() {
       setStatus('success');
       tracking.trackLead();
       setForm({ name: '', email: '', phone: '', jobType: '', experience: '', message: '' });
+      router.push('/thanks');
     } catch (err) {
       console.error(err);
       setStatus('error');
     }
   };
 
-  if (status === 'success') {
-    return (
-      <section className={styles.contact} id="contact">
-        <div className={styles.contact__inner}>
-          <div className={styles.contact__thanks}>
-            <span className={styles.contact__thanksIcon}>
-              <CheckCircle size={56} strokeWidth={1.5} color="#22c55e" />
-            </span>
-            <h2 className={styles.contact__thanksTitle}>送信が完了しました</h2>
-            <p className={styles.contact__thanksDesc}>
-              お問い合わせありがとうございます。
-              <br />
-              内容確認後、担当者よりご連絡差し上げます。
-              <br />
-              (土日祝は対応できない場合がございます)
-            </p>
-            <button
-              className={styles.contact__thanksBack}
-              onClick={() => setStatus('idle')}
-            >
-              トップに戻る
-            </button>
-          </div>
-        </div>
-      </section>
-    );
-  }
+
 
   return (
     <section className={styles.contact} id="contact" aria-labelledby="contact-heading">

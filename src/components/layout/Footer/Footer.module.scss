@@ -9,6 +9,8 @@
     @include container;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: $spacing-lg;
     padding-block: $spacing-2xl;
 
@@ -16,6 +18,7 @@
       flex-direction: row;
       align-items: flex-start;
       justify-content: space-between;
+      text-align: left;
     }
   }
 
@@ -43,7 +46,12 @@
   &__navList {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: $spacing-sm $spacing-lg;
+
+    @include responsive(md) {
+      justify-content: flex-start;
+    }
 
     a {
       font-size: $font-size-sm;
