@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Check } from 'lucide-react';
 import Header from '@/components/layout/Header/Header';
 import Footer from '@/components/layout/Footer/Footer';
+import ThanksTrigger from '@/components/sections/Thanks/ThanksTrigger';
 import styles from './Thanks.module.scss';
 
 export const metadata: Metadata = {
@@ -59,7 +60,7 @@ export default function ThanksPage() {
           </Link>
         </section>
       </main>
-
+      <ThanksTrigger />
       <Footer />
     </div>
   );

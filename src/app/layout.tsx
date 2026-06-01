@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Noto_Sans_JP } from 'next/font/google';
 import Script from 'next/script';
-import { FB_PIXEL_ID, GA_TRACKING_ID } from '@/lib/tracking';
+import { FB_PIXEL_ID, GA_TRACKING_ID, GOOGLE_ADS_ID } from '@/lib/tracking';
 import '../styles/globals.scss';
 
 const notoSansJP = Noto_Sans_JP({
@@ -63,22 +63,23 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
-        {/* Google Tag Manager (gtag.js) */}
-        {GA_TRACKING_ID && (
+        {/* Google Tag (gtag.js) - Google Analytics & Google Ads */}
+        {(GA_TRACKING_ID || GOOGLE_ADS_ID) && (
           <>
             <Script
               strategy="afterInteractive"
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID || GOOGLE_ADS_ID}`}
             />
             <Script
-              id="gtm-base"
+              id="google-tags-base"
               strategy="afterInteractive"
               dangerouslySetInnerHTML={{
                 __html: `
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  gtag('config', '${GA_TRACKING_ID}');
+                  ${GA_TRACKING_ID ? `gtag('config', '${GA_TRACKING_ID}');` : ''}
+                  ${GOOGLE_ADS_ID ? `gtag('config', '${GOOGLE_ADS_ID}');` : ''}
                 `,
               }}
             />
