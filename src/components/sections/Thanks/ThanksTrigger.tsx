@@ -5,7 +5,7 @@ import { trackGoogleAdsConversion } from '@/lib/tracking';
 
 export default function ThanksTrigger() {
   useEffect(() => {
-    const label = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL;
+    const label = "_dGBCPv0mbkcEKuEk-dD";
     if (label) {
       trackGoogleAdsConversion(label);
     }
